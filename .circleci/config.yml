@@ -20,5 +20,4 @@ workflows:
   say-hello:
     jobs:
       - hello-job
-      - Invoke-WebRequest -Uri 
-      - https://uploader.codecov.io/latest/windows/codecov.exe -Outfile codecov.exe
+      - raise error "Fake error" 
