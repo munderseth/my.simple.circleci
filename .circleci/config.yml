@@ -4,18 +4,18 @@ jobs:
   hello-job:
     docker:
         - image: cimg/base:stable
-      steps:
-        - checkout
-        - run:
-            name: "Install Testspace Client"
-            command: |
-              curl -s https://testspace-client.s3.amazonaws.com/testspace-linux-dev.tgz | sudo tar -zxvf- -C /usr/local/bin
-              testspace config url munderseth.stridespace.com --repo=none
-        - run:
-            name: "Publish Results"
-            command: |
-              testspace results.xml
-            when: always
+    steps:
+      - checkout
+      - run:
+          name: "Install Testspace Client"
+          command: |
+            curl -s https://testspace-client.s3.amazonaws.com/testspace-linux-dev.tgz | sudo tar -zxvf- -C /usr/local/bin
+            testspace config url munderseth.stridespace.com --repo=none
+      - run:
+          name: "Publish Results"
+          command: |
+            testspace results.xml
+          when: always
 workflows:
   say-hello:
     jobs:
