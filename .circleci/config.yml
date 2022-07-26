@@ -14,7 +14,7 @@ jobs:
       - run:
           name: "Publish Results"
           command: |
-            testspace results.xml
+            testspace ./testcontent/results.xml
           when: always
 workflows:
   say-hello:
