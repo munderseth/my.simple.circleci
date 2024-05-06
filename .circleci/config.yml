@@ -16,16 +16,7 @@ jobs:
           command: |
             testspace ./testcontent/results.xml
           when: always
-  error-job:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - run:
-          name: "Force error"
-          command: |
-            raise error "Fake error" 
 workflows:
   say-hello:
     jobs:
       - hello-job
-      - error-job 
